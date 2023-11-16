@@ -9,9 +9,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: rgb(30, 159, 161);
+            background-color: rgb(192, 198, 74);
             text-align: center;
             margin: 20px;
+            color: rgb(66, 172, 137);
+            text-shadow: 2px 2px 3px black;
         }
 
         header {
@@ -21,10 +23,13 @@
         }
 
         button {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             padding: 10px 20px;
             font-size: 16px;
             margin: 5px;
             cursor: pointer;
+            border-radius: 4px;
+            background-color: rgb(43, 186, 226);
         }
 
     </style>
@@ -49,11 +54,13 @@
         reload.innerHTML = "Install new lightbulb"
         document.body.appendChild(reload)
 
-        //=======> 
+        //=======> IMPLEMENTIRANJE FUNKCIJA
         btnOn.addEventListener("click", function(){
             clickCounter += 1;
 
-            document.body.style.backgroundColor = 'white';
+            document.body.style.background = "url('light.png') no-repeat center top";
+            document.body.style.backgroundSize = "cover";
+            
             if (clickCounter > 5) {
                 alert("YOU BROKE THE LIGTH!")
                 document.body.style.backgroundColor = 'black';
@@ -61,7 +68,8 @@
         })
 
         btnOff.addEventListener("click", function(){
-
+            
+            document.body.style.background = 'none';
             document.body.style.backgroundColor = 'black'
 
         })
